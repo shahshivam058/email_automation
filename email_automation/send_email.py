@@ -15,6 +15,7 @@ def brodcast_email():
         print(message.as_string())
         print("sending email")
         server = smtplib.SMTP("smtp.gmail.com",587)
+        server.set_debuglevel(1)
         server.starttls()
         server.login(sender_email,password)
         server.sendmail(sender_email,recipeant_email,message.as_string())
